@@ -1,0 +1,220 @@
+﻿body {
+    font-family: Neutra,Helvetica,Arial,Sans-serif;
+}
+
+
+
+
+.blod {
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+}
+
+
+.img-blod {
+    position: absolute;
+    object-fit: cover;
+    height: 90%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+}
+
+.img-sub1-blod{
+    position: absolute;
+    background-size: contain;
+    background-image: url("/images/sub1.jpeg");
+    height: 170px;
+    width: 137px;
+    bottom:0;
+    border-radius: 7px;
+}
+
+.img-sub2-blod {
+    position: absolute;
+    background-size: contain;
+    background-image: url("/images/sub2.jpeg");
+    height: 65px;
+    width: 145px;
+    right:-40px;
+    bottom:30%;
+    border-radius: 7px;
+}
+
+.img-sub3-blod {
+    position: absolute;
+    background-size: contain;
+    background-image: url("/images/sub3.jpeg");
+    height: 29px;
+    width: 160px;
+    right: 0;
+    top: 70px;
+    border-radius: 7px;
+}
+
+.marquee{
+    overflow: hidden;
+}
+    .marquee .marquee-content {
+        display: flex;
+        white-space: nowrap;
+        animation: MarqueeSection 50s infinite linear;
+    }
+    .marquee .marquee-content div {
+        color: #f74c25;
+        padding-right: .5ch;
+        font-size: 6rem;
+        font-weight: 600;
+        line-height: .8;
+    }
+
+
+@keyframes MarqueeSection {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.bg-aspnetTitle3 {
+    background: url("/images/bg-com.png") no-repeat center center;
+    background-size: cover;
+    margin: 0 -100px;
+    padding: 0 100px;
+    clip-path: polygon(0 0, 100% 8rem, 100% 100%, 0% 100%);
+    height: 100vh;
+    padding-top: 9.8em;
+}
+
+.community {
+    background: url("/images/community-bg.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 3rem;
+    width: 60%;
+    height: 50vh;
+    padding: 2em;
+    margin: auto;
+    position: relative;
+}
+
+.community-title {
+    position: relative;
+    top: -3.2rem;
+    background: #fff;
+    border-radius: 2rem;
+    width: 50%;
+    height: 5rem;
+    margin: 0 auto -4rem auto;
+    padding: 0.6rem 5rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.05);
+    text-align: center;
+}
+    .community-title::after {
+        content: "";
+        position: absolute;
+        bottom: -1.4rem;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 1.5rem 1rem 0 1rem;
+        border-color: #fff transparent transparent transparent;
+        margin-left: -1rem;
+    }
+.community-title img{
+   width: 100%;
+   height: 100%;
+}
+
+.community > img{
+    height: 10em;
+}
+.cimg-1{
+    position: absolute;
+    top: -4em;
+    left:-2em;
+}
+
+.cimg-2 {
+    position: absolute;
+    top: -4em;
+    right: 0;
+}
+
+.cimg-3 {
+    position: absolute;
+    bottom: -3em;
+    left: -4em;
+}
+
+.cimg-4 {
+    position: absolute;
+    bottom: -3em;
+    right: -4em;
+}
+
+
+.bg-aspnetTitle4 {
+    transform-origin: bottom;
+    transform: scaleY(1.4);
+    background-color: #f7f7f5;
+    margin: 0 -100px;
+    padding: 0 100px;
+    clip-path: polygon(0 10rem, 100% 0, 100% 100%, 0% 100%);
+    height: 85vh;
+    padding-top: 9.8em;
+}
+
+.customNewControl{
+    margin: auto;
+    border-radius: 9px;
+}
+
+.customNewControl img{
+    width: 70px;
+}
+
+.dxp-num{
+    color: dimgray !important;
+    text-decoration: none !important;
+}
+.dxpLite .dxp-current {
+    color: white !important;
+    padding: 4px 8px !important;
+}
+.dxp-current {
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.dxp-bt{
+    text-decoration:none !important;
+}
+
+.CustomPopup{
+    border-radius: 7px;
+    border:1px solid red;
+}
+
+.headerPopup {
+    background: url("/images/popup_header.png") no-repeat top center;
+    background-size: cover;
+    height: 50px;
+    background-position-y: -40px;
+}
+    .headerPopup span {
+        color: #f74c25;
+        font-weight: 600;
+        font-size: 18px;
+        vertical-align:bottom;
+    }
+.dxpc-content{
+    font-size: 1rem !important;
+}

@@ -1,0 +1,131 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Neutra,Helvetica,Arial,Sans-serif;
+}
+
+
+#particles-js {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 99.5vh;
+    background-image: url("https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953687.jpg?t=st=1713601971~exp=1713605571~hmac=d2ab5d36e97f14a1469ba90a19d49f169a68a45bac34289a8854b92cb269525c&w=1060");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+
+
+#form1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-form {
+    color: white;
+    background: rgb(12,22,45,0.8); 
+    border: 1px solid #202637;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.btn-login {
+    float: left;
+    margin-left: 12em;
+    border: 1px solid #f74c25;
+    padding: 5px;
+    background: transparent;
+    border-radius: 7px;
+    background: #f74c25;
+    color: white;
+    font-weight: 600;
+}
+    .btn-login:hover {
+        background: none;
+        color: #f74c25;
+        cursor: pointer;
+    }
+
+    tbody tr:nth-last-child(2) td{
+            padding-left: 10em;
+        }
+    tbody tr:nth-child(n+2){
+        visibility: hidden;
+        transition: all 0.5s ease-in;
+    }
+    .title-login{
+        padding-left: 3em;
+        line-height: 1.5em;
+
+
+    }
+
+        .title-login:after {
+            content: attr(data-content);
+            animation: blink 1s infinite;
+        }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.planet-login {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    right: -70px;
+}

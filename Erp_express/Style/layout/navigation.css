@@ -1,0 +1,23 @@
+﻿.navigation *{
+    border: 0px solid !important;
+    font-weight: 600;
+}
+.navigation{
+    position:absolute;
+    margin-top: 80px;
+    margin-left: -50px;
+}
+.dxnb-item{
+    border-radius: 10px;
+}
+.navigationIcon * {
+    border: 0px solid !important;
+    font-weight: 600;
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+.navigationIcon {
+    margin-top: 55px;
+    
+}
+

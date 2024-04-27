@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="Erp_express.Views.Dashboard" %>
+
+<%@ Register Assembly="DevExpress.Web.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%--register component--%>
+<%@ Register Src="~/Component/Navigation.ascx" TagPrefix="uc" TagName="Navigation" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashboard</title>
+    <link href="../Style/layout/dashboardLayout.css" rel="stylesheet" type="text/css" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function CollapsedChangedCollapsed(s, e) {
+            $('.nav').css('visibility', 'hidden');
+            $('.navMobile').css('visibility', 'visible');
+        }
+
+        function CollapsedChangedExpanded(s, e) {
+            $('.nav').css('visibility', 'visible');
+            $('.navMobile').css('visibility', 'hidden');
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+            
+        </asp:ScriptManager>
+        <header>
+            <dx:ASPxPanel ID="ASPxPanel1" runat="server" Width="200px" FixedPosition="WindowTop" CssClass="headerCustom">
+                <PanelCollection>              
+                    <dx:PanelContent>
+                        <div>
+                            <h2>_Lam</h2>
+                        </div>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxPanel>
+        </header>
+
+        <dx:ASPxPanel ID="ASPxPanel2" runat="server" Width="150px" FixedPosition="WindowLeft" Collapsible="True" ScrollBars="Auto" FixedPositionOverlap="False" CssClass="navbarCustom"> 
+            <ClientSideEvents 
+                Collapsed="function(s,e){CollapsedChangedCollapsed(s,e)}"
+                Expanded="function(s,e){CollapsedChangedExpanded(s,e)}"
+            />
+            <PanelCollection>
+                <dx:PanelContent>
+                    <div class="nav">
+                        <uc:Navigation runat="server" ID="Navigation" /> 
+                    </div>
+                </dx:PanelContent>
+            </PanelCollection>
+            <ExpandBarTemplate>
+                <div class="navMobile">
+                    <uc:Navigation runat="server" ID="NavigationMobile" PropertyType="Mobile"/>
+                </div>
+            </ExpandBarTemplate>
+          
+        </dx:ASPxPanel>
+
+        
+        <div class="content">      
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+        </asp:ContentPlaceHolder>
+        
+        </div>
+
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/lib/noframework.waypoints.min.js") %>
+    </asp:PlaceHolder>
+
+    
+</body>
+</html>
