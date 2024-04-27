@@ -16,24 +16,36 @@
         
         <dx:NavBarGroup Text="cài đặt">
             <Items>
-                <dx:NavBarItem Text="Sales Report" NavigateUrl="~/SalesReport.aspx" />
-                <dx:NavBarItem Text="Purchase Report" NavigateUrl="~/PurchaseReport.aspx" />
-                <dx:NavBarItem Text="Stock Report" NavigateUrl="~/StockReport.aspx" />
+                <dx:NavBarItem Text="tài khoản" NavigateUrl="~/SalesReport.aspx" />
             </Items>
         </dx:NavBarGroup>
     </Groups>
 </dx:ASPxNavBar>
 
-<dx:ASPxNavBar ID="ASPxNavBarIcon" ClientInstanceName="ASPxNavBarIcon" runat="server" AllowSelectItem="true" EnableAnimation="true" Theme="Office365" ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" CssClass="navigationIcon" style="width: auto !important" Visible="False">
+<dx:ASPxNavBar ID="ASPxNavBarIcon" ClientInstanceName="ASPxNavBarIcon" runat="server" AllowSelectItem="True" EnableAnimation="True" Theme="Office365" ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" CssClass="navigationIcon" style="width: auto !important" Visible="False">
+<ClientSideEvents ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }"></ClientSideEvents>
     <Groups>
         <dx:NavBarGroup Text="TC">
             <ItemStyle HorizontalAlign="Center" />
             <Items>
-               <dx:NavBarItem Text="" Name="/Views/user.aspx" Image-Url="../images/image1.PNG" Image-Width="30" />
-                <dx:NavBarItem Text="" Name="/dashboard" Image-Url="../images/image1.PNG" Image-Width="30" Selected="True" />
+               <dx:NavBarItem Text="" Name="/Views/user.aspx" >
+                    <Image IconID="businessobjects_bo_vendor_svg_16x16"></Image>
+                </dx:NavBarItem>
+                <dx:NavBarItem Text="" Name="/dashboard" Selected="True" >
+                    <Image IconID="dashboards_choroplethmap_svg_16x16"></Image>
+                </dx:NavBarItem>
             </Items>
         </dx:NavBarGroup>
         
+        <dx:NavBarGroup Text="CD">
+            <ItemStyle HorizontalAlign="Center" />
+            <Items>
+                <dx:NavBarItem Text="" Name="~/SalesReport.aspx"  > 
+                    <Image IconID="businessobjects_bo_lead_svg_16x16">
+                    </Image>
+                </dx:NavBarItem>
+            </Items>
+        </dx:NavBarGroup>
     </Groups>
 </dx:ASPxNavBar>
 
