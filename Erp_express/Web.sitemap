@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="/dashboard" title="trang chủ"  description="home page">
+    <siteMapNode url="/dashboard/permission" title="quyền"  description="permission page" />
+  </siteMapNode>
+</siteMap>

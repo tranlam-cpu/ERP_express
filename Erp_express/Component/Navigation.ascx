@@ -5,42 +5,64 @@
 
 
 
-<dx:ASPxNavBar ID="ASPxNavBar1" ClientInstanceName="ASPxNavBar1" runat="server" AllowSelectItem="true" EnableAnimation="true" Theme="Office365" ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" CssClass="navigation" style="width: auto !important" Visible="False">
+<dx:ASPxNavBar 
+    ID="ASPxNavBar1" 
+    ClientInstanceName="ASPxNavBar1" 
+    runat="server" 
+    AllowSelectItem="true" 
+    EnableAnimation="true" 
+    Theme="Office365" 
+    ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" 
+    ClientSideEvents-HeaderClick="function(s,e){e.processOnServer = false; onHeadClick(s,e) }" 
+    CssClass="navigation" 
+    style="width: auto !important" 
+    Visible="False">
     <Groups>
-        <dx:NavBarGroup Text="Trang chủ">
+        <dx:NavBarGroup Name="TC" Text="Trang chủ">
             <Items>
-                <dx:NavBarItem Text="usAjax"  Name="/Views/user.aspx"/>
-                <dx:NavBarItem Text="DashboardAjax" Name="/dashboard" Selected="True" />
+                <dx:NavBarItem Text="usAjax" NavigateUrl="/Views/user.aspx"  Name="/Views/user.aspx"/>
+                <dx:NavBarItem Text="DashboardAjax" NavigateUrl="/dashboard" Name="/dashboard" Selected="True" />
             </Items>
         </dx:NavBarGroup>
         
-        <dx:NavBarGroup Text="cài đặt">
+        <dx:NavBarGroup Name="CD" Text="cài đặt">
             <Items>
-                <dx:NavBarItem Text="tài khoản" NavigateUrl="~/SalesReport.aspx" />
+                <dx:NavBarItem Text="quyền" NavigateUrl="/dashboard/permission" Name="/dashboard/permission" />
             </Items>
         </dx:NavBarGroup>
     </Groups>
 </dx:ASPxNavBar>
 
-<dx:ASPxNavBar ID="ASPxNavBarIcon" ClientInstanceName="ASPxNavBarIcon" runat="server" AllowSelectItem="True" EnableAnimation="True" Theme="Office365" ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" CssClass="navigationIcon" style="width: auto !important" Visible="False">
-<ClientSideEvents ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }"></ClientSideEvents>
+<dx:ASPxNavBar 
+    ID="ASPxNavBarIcon" 
+    ClientInstanceName="ASPxNavBarIcon" 
+    runat="server" 
+    AllowSelectItem="True" 
+    EnableAnimation="True" 
+    Theme="Office365" 
+    ClientSideEvents-ItemClick="function(s,e){e.processOnServer = false; onItemClick(e.item.name) }" 
+    ClientSideEvents-HeaderClick="function(s,e){e.processOnServer = false; onHeadClickIcon(s,e) }" 
+    CssClass="navigationIcon" 
+    style="width: auto !important" 
+    Visible="False">
+
     <Groups>
-        <dx:NavBarGroup Text="TC">
+        <dx:NavBarGroup Name="TC" Text="TC">
             <ItemStyle HorizontalAlign="Center" />
             <Items>
-               <dx:NavBarItem Text="" Name="/Views/user.aspx" >
+               <dx:NavBarItem Text="" NavigateUrl="/Views/user.aspx" Name="/Views/user.aspx" >
                     <Image IconID="businessobjects_bo_vendor_svg_16x16"></Image>
                 </dx:NavBarItem>
-                <dx:NavBarItem Text="" Name="/dashboard" Selected="True" >
+                <dx:NavBarItem Text="" NavigateUrl="/dashboard" Name="/dashboard" Selected="True" >
                     <Image IconID="dashboards_choroplethmap_svg_16x16"></Image>
                 </dx:NavBarItem>
             </Items>
         </dx:NavBarGroup>
         
-        <dx:NavBarGroup Text="CD">
+        <dx:NavBarGroup Name="CD" Text="CD">
             <ItemStyle HorizontalAlign="Center" />
             <Items>
-                <dx:NavBarItem Text="" Name="~/SalesReport.aspx"  > 
+                <dx:NavBarItem Text="" NavigateUrl="/dashboard/permission"  Name="/dashboard/permission"  > 
                     <Image IconID="businessobjects_bo_lead_svg_16x16">
                     </Image>
                 </dx:NavBarItem>
@@ -48,7 +70,6 @@
         </dx:NavBarGroup>
     </Groups>
 </dx:ASPxNavBar>
-
 <script type="text/javascript">
     function onItemClick(name) {
         
@@ -56,19 +77,94 @@
             ASPxNavBar1.SetSelectedItem(ASPxNavBar1.GetItemByName(name));
             ASPxNavBarIcon.SetSelectedItem(ASPxNavBarIcon.GetItemByName(name));
 
-            $.ajax({
-                type: "GET",
-                url: name,
-                success: function (data) {
-                    /*find content for DOM*/
-                    var content = $(data).find('#main-content').html();
+            //$.ajax({
+            //    type: "GET",
+            //    url: name,
+            //    success: function (data) {
+                    
+            //        /*find content css express for DOM*/
+            //        var linkHref = $(data).find('link[href*="/DXR"]').attr('href');
+            //        var linkElement = document.querySelector('link[href*="/DXR"]');
+            //        if (linkElement) {
+            //            linkElement.href = linkHref
+            //        } else {
+            //            var newLink = document.createElement('link');
+            //            newLink.rel = 'stylesheet';
+            //            newLink.href = linkHref 
+            //            $('head').append(newLink);
+            //        }
 
-                    $('.content').html(content);
+                    
+            //        /*find content for DOM*/
+            //        var content = $(data).find('#main-content').html();
+            //        $('.content').html(content);
 
-                    /*add new entry to the browser history*/
-                    history.pushState(null, null, name);
-                }
-            });
+                    
+                   
+
+                 
+                    
+
+
+                    
+            //    },
+            //    complete: function () {
+            //        /*add new entry to the browser history*/
+            //         history.pushState(null, null, name);
+
+            //        /* Manually call the EndCallback event of the DevExpress controls */     
+            //        //ASPxClientControl.GetControlCollection().ForEachControl(function (control) {
+            //        //    if (control) {
+                           
+            //        //        if (typeof control.PerformCallback === 'function' && control.PerformCallback) {
+                                
+            //        //            // For DevExpress controls that support callbacks
+            //        //            control.PerformCallback();
+                                
+            //        //            if (typeof control.HideLoadingPanel === 'function') {
+            //        //                control.HideLoadingPanel();
+                                    
+            //        //            }
+            //        //        }
+                           
+            //        //    }
+                    
+            //        //});
+            //    }
+            //});
         }
     }
+
+    function onHeadClick(s,e) {
+        if (e.group && !e.processOnServer) {
+            var isExpanded = e.group.GetExpanded();
+            var groupIcon = ASPxNavBarIcon.GetGroupByName(e.group.name);
+            groupIcon.SetExpanded(!isExpanded);
+            
+        }     
+
+    }
+
+    function onHeadClickIcon(s, e) {
+        if (e.group && !e.processOnServer) {
+            var isExpanded = e.group.GetExpanded();
+            var group = ASPxNavBar1.GetGroupByName(e.group.name);
+ 
+            group.SetExpanded(!isExpanded);
+
+  
+        }    
+    }
+
+    $(document).ready(function () {
+        var currentPath = window.location.pathname;
+        var item = ASPxNavBar1.GetItemByName(currentPath);
+        if (item) {
+            ASPxNavBar1.SetSelectedItem(item);
+        }
+        var itemIcon = ASPxNavBarIcon.GetItemByName(currentPath);
+        if (itemIcon) {
+            ASPxNavBarIcon.SetSelectedItem(itemIcon);
+        }
+    });
 </script>

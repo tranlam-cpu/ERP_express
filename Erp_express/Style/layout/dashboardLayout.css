@@ -6,7 +6,8 @@
 
 body {
     font-family: Neutra,Helvetica,Arial,Sans-serif;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .navbarCustom{
@@ -22,4 +23,80 @@ body {
     display: flex;
     justify-content:center;
     align-items:center;
+}
+
+.content {
+    padding: 2em 1em;
+    background: #e9ecef;
+    height: 100vh;
+}
+.dx{
+    width: 100%;
+    border: none !important;
+    margin-bottom: 1em !important;
+}
+
+.inputSearch {
+    border: none !important;
+    font-size: 1em !important;
+}
+    .inputSearch input {
+        padding: 0.5em 1em !important;
+        max-width: 100%;
+        border-radius: 4px !important;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;
+    }
+
+
+
+.gridviewLayout table {
+    min-width: 700px !important;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.dx-ar{
+    text-align: left;
+}
+.dxgvControl .dxctToolbar.dxm-main {
+    background-color: #e9ecef;
+}
+    .dxgvControl .dxctToolbar.dxm-main.dxgvCTTop {
+        border-bottom-width: 0 !important;
+    }
+
+
+
+
+
+.task-gap div {
+    cursor: pointer;
+    white-space: nowrap;
+  
+}
+
+    .task-gap div:after {
+        margin-top: 1em;
+        display: block;
+        content: '';
+        border-bottom: solid 3px #f87c1d;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .task-gap div:hover:after {
+        transform: scaleX(1);
+    }
+
+    .task-gap div.fromRight:after {
+        transform-origin: 100% 50%;
+    }
+
+    .task-gap div.fromLeft:after {
+        transform-origin: 0% 50%;
+    }
+
+
+.dxflRequired{
+    color: red !important;
 }

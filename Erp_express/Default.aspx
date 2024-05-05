@@ -107,7 +107,7 @@
                                 &nbsp;
                             </div>
                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                              <path fill="#F28870" transform="translate(100 100)" >
+                              <path fill="#F28870" transform="translate(100 100)" d="M0 0">
                                   <animate 
                                       attributeName="d"
                                       dur="10000ms"
@@ -198,7 +198,7 @@
         </dx:ASPxPopupControl>
         <section class="bg-aspnetTitle4" aria-labelledby="aspnetTitle4">
 
-            <h3 class="text-center">Chúng tôi lắng nghe <p style="color:#f74c25; font-weight: 600">mang đến giải pháp tốt nhất cho bạn</p></h3>
+            <h3 class="text-center">Chúng tôi lắng nghe <font style="color:#f74c25; font-weight: 600">mang đến giải pháp tốt nhất cho bạn</font></h3>
             
             <dx:ASPxNewsControl 
                 ID="ASPxNewsControl1" 
@@ -218,7 +218,7 @@
                 <PagerSettings 
                     CurrentPageNumberFormat="{0}" 
                     NumericButtonCount="5"
-                Summary-Text="Trang">
+                    Summary-Text="Trang">
                     <NextPageButton Visible="True" Text="sau" />
                     <PrevPageButton Visible="True" Text="trước" />
                 </PagerSettings>   

@@ -14,6 +14,7 @@ namespace Erp_express
     {
         void Application_Start(object sender, EventArgs e)
         {
+
             // Code that runs on application startup
             //RouteConfig.RegisterRoutes(RouteTable.Routes);
             RegisterRoutes(RouteTable.Routes);
@@ -26,6 +27,7 @@ namespace Erp_express
             routes.MapPageRoute("user", "user", "~/Views/user.aspx");
             routes.MapPageRoute("login", "login", "~/Views/Login.aspx");
             routes.MapPageRoute("dashboard", "dashboard", "~/Views/dashboard.aspx");
+            routes.MapPageRoute("dashboard/permission", "dashboard/permission", "~/Views/permission.aspx");
         }   
     }
 }

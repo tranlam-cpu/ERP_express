@@ -26,10 +26,10 @@
             $('.navMobile').css('visibility', 'hidden');
         }
     </script>
-
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -49,6 +49,13 @@
             </Scripts>
             
         </asp:ScriptManager>
+        <dx:ASPxScriptManager ID="ASPxScriptManager1" runat="server">
+            <Items>
+                <dx:ResourceScript Suite="All" />          
+            </Items>
+          
+        </dx:ASPxScriptManager>
+
         <header>
             <dx:ASPxPanel ID="ASPxPanel1" runat="server" Width="200px" FixedPosition="WindowTop" CssClass="headerCustom">
                 <PanelCollection>              
@@ -61,7 +68,7 @@
             </dx:ASPxPanel>
         </header>
 
-        <dx:ASPxPanel ID="ASPxPanel2" runat="server" Width="150px" FixedPosition="WindowLeft" Collapsible="True" ScrollBars="Auto" FixedPositionOverlap="False" CssClass="navbarCustom"> 
+        <dx:ASPxPanel ID="ASPxPanel2" runat="server" Width="150px" FixedPosition="WindowLeft" Collapsible="True" ScrollBars="Auto" FixedPositionOverlap="False" CssClass="navbarCustom" > 
             <ClientSideEvents 
                 Collapsed="function(s,e){CollapsedChangedCollapsed(s,e)}"
                 Expanded="function(s,e){CollapsedChangedExpanded(s,e)}"
@@ -83,17 +90,19 @@
 
         
         <div class="content">      
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
-        </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+            </asp:ContentPlaceHolder>
         
         </div>
-
+      
     </form>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
         <%: Scripts.Render("~/Scripts/lib/noframework.waypoints.min.js") %>
     </asp:PlaceHolder>
 
-    
+    <%--js--%>
+    <asp:ContentPlaceHolder ID="bottom" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 </html>
