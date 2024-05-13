@@ -10,7 +10,7 @@ namespace Erp_express.Repositories
     {
         IEnumerable<T> GetAll();
         T Get(int id);
-        void Add(T entity);
+        T Add(T entity);
         void Update(T entity);
         void Delete(T entity);
     }

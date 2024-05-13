@@ -57,10 +57,11 @@ namespace Erp_express.Repositories
             return _context.Users.Find(id);
         }
 
-        public void Add(User entity)
+        public User Add(User entity)
         {
             _context.Users.Add(entity);
             _context.SaveChanges();
+            return entity;
         }
         public void Update(User entity)
         {

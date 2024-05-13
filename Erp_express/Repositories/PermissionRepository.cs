@@ -1,6 +1,7 @@
 ﻿using Erp_express.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -25,9 +26,12 @@ namespace Erp_express.Repositories
             return _context.Permissions.Find(id);
         }
 
-        public void Add(Permission entity)
+        public Permission Add(Permission entity)
         {
+
             _context.Permissions.Add(entity);
+            _context.SaveChanges();
+            return entity;
         }
 
         public void Update(Permission entity)

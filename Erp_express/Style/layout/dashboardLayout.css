@@ -7,7 +7,7 @@
 body {
     font-family: Neutra,Helvetica,Arial,Sans-serif;
     overflow-x: auto;
-    overflow-y: hidden;
+    
 }
 
 .navbarCustom{
@@ -28,7 +28,9 @@ body {
 .content {
     padding: 2em 1em;
     background: #e9ecef;
-    height: 100vh;
+    overflow-y: auto;
+    min-height: 100vh;
+    height: auto;
 }
 .dx{
     width: 100%;
@@ -99,4 +101,12 @@ body {
 
 .dxflRequired{
     color: red !important;
+}
+.btnHuy {
+    background-color: rgba(248, 124, 29, 0.4);
+    color: #f87c1d;
+}
+.btnHuy:hover {
+    background-color: #f87c1d;
+    color: #fff;
 }

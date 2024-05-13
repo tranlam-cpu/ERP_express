@@ -15,6 +15,24 @@ namespace Erp_express.Views
     {
 
         /// <summary>
+        /// NewsCallback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel NewsCallback;
+
+        /// <summary>
+        /// ASPxPanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PanelContent ASPxPanel2;
+
+        /// <summary>
         /// SiteMapPath1 control.
         /// </summary>
         /// <remarks>
@@ -78,24 +96,6 @@ namespace Erp_express.Views
         protected global::DevExpress.Web.PanelContent ASPxPanel1;
 
         /// <summary>
-        /// NewsCallback control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel NewsCallback;
-
-        /// <summary>
-        /// ASPxPanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.PanelContent ASPxPanel2;
-
-        /// <summary>
         /// createForm control.
         /// </summary>
         /// <remarks>
@@ -130,5 +130,14 @@ namespace Erp_express.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btOK;
+
+        /// <summary>
+        /// cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton cancel;
     }
 }
